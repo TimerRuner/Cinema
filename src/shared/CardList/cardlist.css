@@ -1,0 +1,28 @@
+.cardList {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        rgba(18, 0, 36, 1) 14%,
+        rgba(117, 52, 195, 1) 100%,
+        rgba(98, 0, 255, 1) 100%
+    );
+
+    padding: 80px 0 30px;
+}
+.cardList__content {
+    position: relative;
+    z-index: 3;
+}
+.cardList__title {
+    font-size: 50px;
+    line-height: 55px;
+    margin: 0 0 30px 0;
+    color: #fff;
+}
+.cardList__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    min-height: 100vh;
+}
