@@ -6,14 +6,17 @@ import { Card } from "./Card/Card"
 import { AppBg } from "../AppBg"
 
 export function CardList() {
-    const { id, movies, currentPage, perPage, loading } = useTypeSelector(
-        (state) => state.cinema
-    )
-    const { fetchCinema } = useActions()
+    const { id, movies, currentMovies, currentPage, perPage, loading } =
+        useTypeSelector((state) => state.cinema)
+    const { fetchCinema, initCinema } = useActions()
 
     useEffect(() => {
-        fetchCinema(currentPage, perPage, id)
-    }, [currentPage, id])
+        initCinema()
+    }, [])
+
+    useEffect(() => {
+        fetchCinema(currentPage, perPage, id, movies)
+    }, [currentPage, id, movies])
 
     return (
         <div className={styles.cardList}>
@@ -23,7 +26,7 @@ export function CardList() {
                     <div className={styles.cardList__wrapper}>
                         {loading && <div>Loading...</div>}
                         {!movies.length && <div>No posts</div>}
-                        {movies.map(
+                        {currentMovies.map(
                             ({ Title, imdbID, Poster, Year }, index) => (
                                 <Card
                                     key={index}

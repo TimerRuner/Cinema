@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 app.use(compression())
-app.use(
-    helmet({
-        contentSecurityPolicy: false,
-        crossOriginEmbedderPolicy: false,
-    })
-)
+// app.use(
+//     helmet({
+//         contentSecurityPolicy: false,
+//         crossOriginEmbedderPolicy: false,
+//     })
+// )
 
 app.use("/static", express.static("./dist/client"))
 app.get("*", (req, res) => {

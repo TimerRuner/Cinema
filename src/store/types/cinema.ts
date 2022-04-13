@@ -1,16 +1,22 @@
 export interface CinemaState {
     id: Array<string>
     movies: Array<any>
+    currentMovies: any[]
     currentPage: number
     perPage: number
     error: string
     loading: boolean
+}
+export interface InitCinemaType {
+    id: string[]
+    movies: any[]
 }
 
 export enum CinemaActionTypes {
     FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS",
     FETCH_MOVIES_ERROR = "FETCH_MOVIES_ERROR",
     FETCH_MOVIES = "FETCH_MOVIES",
+    INIT_CINEMA = "INIT_CINEMA",
 }
 
 interface FetchCinemaAction {
@@ -25,7 +31,13 @@ interface FetchCinemaErrorAction {
     payload: string
 }
 
+interface InitCinema {
+    type: CinemaActionTypes.INIT_CINEMA
+    payload: InitCinemaType
+}
+
 export type CinemaAction =
     | FetchCinemaSuccessAction
     | FetchCinemaErrorAction
     | FetchCinemaAction
+    | InitCinema
