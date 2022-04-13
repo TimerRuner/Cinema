@@ -106,7 +106,7 @@ eval("\r\n/*\r\n  MIT License http://www.opensource.org/licenses/mit-license.php
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = exports.AppCopmonent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/CardList */ \"./src/shared/CardList/index.ts\");\r\nvar react_redux_1 = __webpack_require__(/*! react-redux */ \"react-redux\");\r\nvar store_1 = __webpack_require__(/*! ./store */ \"./src/store/index.ts\");\r\nfunction AppCopmonent() {\r\n    return (react_1.default.createElement(react_redux_1.Provider, { store: store_1.store },\r\n        react_1.default.createElement(Layout_1.Layout, null,\r\n            react_1.default.createElement(Header_1.Header, null),\r\n            react_1.default.createElement(CardList_1.CardList, null))));\r\n}\r\nexports.AppCopmonent = AppCopmonent;\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppCopmonent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = exports.AppCopmonent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nvar CardList_1 = __webpack_require__(/*! ./shared/CardList */ \"./src/shared/CardList/index.ts\");\r\nvar react_redux_1 = __webpack_require__(/*! react-redux */ \"react-redux\");\r\nvar store_1 = __webpack_require__(/*! ./store */ \"./src/store/index.ts\");\r\nvar Alert_1 = __webpack_require__(/*! ./shared/Alert */ \"./src/shared/Alert/index.ts\");\r\nfunction AppCopmonent() {\r\n    return (react_1.default.createElement(react_redux_1.Provider, { store: store_1.store },\r\n        react_1.default.createElement(Layout_1.Layout, null,\r\n            react_1.default.createElement(Header_1.Header, null),\r\n            react_1.default.createElement(CardList_1.CardList, null),\r\n            react_1.default.createElement(Alert_1.Alert, null))));\r\n}\r\nexports.AppCopmonent = AppCopmonent;\r\nexports.App = root_1.hot(function () { return react_1.default.createElement(AppCopmonent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);\"]);\n// Module\nexports.push([module.i, \"ul {\\r\\n    margin: 0;\\r\\n    padding: 0;\\r\\n    list-style: none;\\r\\n}\\r\\n\\r\\na {\\r\\n    text-decoration: none;\\r\\n}\\r\\n\\r\\n* {\\r\\n    padding: 0px;\\r\\n    margin: 0px;\\r\\n    border: 0px;\\r\\n}\\r\\n*,\\r\\n*:before,\\r\\n*:after {\\r\\n    -moz-box-sizing: border-box;\\r\\n    -webkit-box-sizing: border-box;\\r\\n    box-sizing: border-box;\\r\\n}\\r\\n:focus,\\r\\n:active {\\r\\n    outline: none;\\r\\n}\\r\\na:focus,\\r\\na:active {\\r\\n    outline: none;\\r\\n}\\r\\naside,\\r\\nnav,\\r\\nfooter,\\r\\nheader,\\r\\nsection {\\r\\n    display: block;\\r\\n}\\r\\nhtml,\\r\\nbody {\\r\\n    height: 100%;\\r\\n}\\r\\nbody {\\r\\n    line-height: 1;\\r\\n    font-size: 14px;\\r\\n    -ms-text-size-adjust: 100%;\\r\\n    -moz-text-size-adjust: 100%;\\r\\n    -webkit-text-size-adjust: 100%;\\r\\n}\\r\\ninput::-ms-clear {\\r\\n    display: none;\\r\\n}\\r\\nbutton {\\r\\n    cursor: pointer;\\r\\n}\\r\\nbutton::-moz-focus-inner {\\r\\n    padding: 0;\\r\\n    border: 0;\\r\\n}\\r\\na,\\r\\na:visited {\\r\\n    text-decoration: none;\\r\\n}\\r\\na:hover {\\r\\n    text-decoration: none;\\r\\n}\\r\\nul li {\\r\\n    list-style: none;\\r\\n}\\r\\nimg {\\r\\n    vertical-align: top;\\r\\n}\\r\\nh1,\\r\\nh2,\\r\\nh3,\\r\\nh4,\\r\\nh5,\\r\\nh6 {\\r\\n    font-weight: inherit;\\r\\n    font-size: inherit;\\r\\n}\\r\\n\\r\\n:root {\\r\\n    --black: #000;\\r\\n    --white: #fff;\\r\\n}\\r\\n\\r\\nbody {\\r\\n    font-family: \\\"Roboto\\\", serif;\\r\\n}\\r\\n.container {\\r\\n    max-width: 1140px;\\r\\n    margin: 0 auto;\\r\\n    padding: 0 30px;\\r\\n}\\r\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.global.css?");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);\"]);\n// Module\nexports.push([module.i, \"ul {\\r\\n    margin: 0;\\r\\n    padding: 0;\\r\\n    list-style: none;\\r\\n}\\r\\n\\r\\na {\\r\\n    text-decoration: none;\\r\\n}\\r\\n\\r\\n* {\\r\\n    padding: 0px;\\r\\n    margin: 0px;\\r\\n    border: 0px;\\r\\n}\\r\\n*,\\r\\n*:before,\\r\\n*:after {\\r\\n    -moz-box-sizing: border-box;\\r\\n    -webkit-box-sizing: border-box;\\r\\n    box-sizing: border-box;\\r\\n}\\r\\n:focus,\\r\\n:active {\\r\\n    outline: none;\\r\\n}\\r\\na:focus,\\r\\na:active {\\r\\n    outline: none;\\r\\n}\\r\\naside,\\r\\nnav,\\r\\nfooter,\\r\\nheader,\\r\\nsection {\\r\\n    display: block;\\r\\n}\\r\\nhtml,\\r\\nbody {\\r\\n    height: 100%;\\r\\n}\\r\\nbody {\\r\\n    line-height: 1;\\r\\n    font-size: 14px;\\r\\n    -ms-text-size-adjust: 100%;\\r\\n    -moz-text-size-adjust: 100%;\\r\\n    -webkit-text-size-adjust: 100%;\\r\\n}\\r\\ninput::-ms-clear {\\r\\n    display: none;\\r\\n}\\r\\nbutton {\\r\\n    cursor: pointer;\\r\\n}\\r\\nbutton::-moz-focus-inner {\\r\\n    padding: 0;\\r\\n    border: 0;\\r\\n}\\r\\na,\\r\\na:visited {\\r\\n    text-decoration: none;\\r\\n}\\r\\na:hover {\\r\\n    text-decoration: none;\\r\\n}\\r\\nul li {\\r\\n    list-style: none;\\r\\n}\\r\\nimg {\\r\\n    vertical-align: top;\\r\\n}\\r\\nh1,\\r\\nh2,\\r\\nh3,\\r\\nh4,\\r\\nh5,\\r\\nh6 {\\r\\n    font-weight: inherit;\\r\\n    font-size: inherit;\\r\\n}\\r\\n\\r\\n:root {\\r\\n    --black: #000;\\r\\n    --white: #fff;\\r\\n    --green: #d4edda;\\r\\n    --border-green: #c3e6cb;\\r\\n    --yellow: #fff3cd;\\r\\n    --border-yellow: #ffeeba;\\r\\n    --red: #f8d7da;\\r\\n    --border-red: #f5c6cb;\\r\\n}\\r\\n\\r\\nbody {\\r\\n    font-family: \\\"Roboto\\\", serif;\\r\\n}\\r\\n.container {\\r\\n    max-width: 1140px;\\r\\n    margin: 0 auto;\\r\\n    padding: 0 30px;\\r\\n}\\r\\n\\r\\n/*Alert type color*/\\r\\n.warning {\\r\\n    background-color: var(--yellow);\\r\\n    border: 1px solid var(--border-yellow);\\r\\n}\\r\\n.error {\\r\\n    background-color: var(--red);\\r\\n    border: 1px solid var(--border-red);\\r\\n}\\r\\n.success {\\r\\n    background-color: var(--gree);\\r\\n    border: 1px solid var(--border-green);\\r\\n}\\r\\n\\r\\n/* Alert anim action*/\\r\\n\\r\\n/* .alert-enter {\\r\\n    opacity: 0;\\r\\n    transform: translateY(200px);\\r\\n}\\r\\n.alert-enter-active {\\r\\n    transform: translateY(0);\\r\\n    opacity: 1;\\r\\n    transition: opacity 0.5s, transform 0.5s;\\r\\n}\\r\\n\\r\\n.alert-exit {\\r\\n    opacity: 1;\\r\\n    transform: translateY(0);\\r\\n}\\r\\n.alert-exit-active {\\r\\n    opacity: 0;\\r\\n    transform: translateY(200px);\\r\\n    transition: opacity 0.5s, transform 0.5s;\\r\\n} */\\r\\n\\r\\n.alert-enter {\\r\\n    opacity: 0;\\r\\n    transform: scale(0.9);\\r\\n}\\r\\n.alert-enter-active {\\r\\n    opacity: 1;\\r\\n    transform: translateX(0);\\r\\n    transition: opacity 500ms, transform 500ms;\\r\\n}\\r\\n.alert-exit {\\r\\n    opacity: 1;\\r\\n}\\r\\n.alert-exit-active {\\r\\n    opacity: 0;\\r\\n    transform: scale(0.9);\\r\\n    transition: opacity 500ms, transform 500ms;\\r\\n}\\r\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/main.global.css?");
 
 /***/ }),
 
@@ -237,6 +237,41 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 
 "use strict";
 eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nvar server_1 = __importDefault(__webpack_require__(/*! react-dom/server */ \"react-dom/server\"));\r\nvar App_tsx_1 = __webpack_require__(/*! ../App.tsx */ \"./src/App.tsx\");\r\nvar indexTemplate_1 = __webpack_require__(/*! ./indexTemplate */ \"./src/server/indexTemplate.js\");\r\nvar compression_1 = __importDefault(__webpack_require__(/*! compression */ \"compression\"));\r\nvar helmet_1 = __importDefault(__webpack_require__(/*! helmet */ \"helmet\"));\r\nvar PORT = process.env.PORT || 3000;\r\nvar app = express_1.default();\r\napp.use(compression_1.default());\r\napp.use(helmet_1.default({\r\n    contentSecurityPolicy: false,\r\n    crossOriginEmbedderPolicy: false,\r\n}));\r\napp.use(\"/static\", express_1.default.static(\"./dist/client\"));\r\napp.get(\"*\", function (req, res) {\r\n    res.send(indexTemplate_1.indexTemplate(server_1.default.renderToString(App_tsx_1.App())));\r\n});\r\napp.listen(PORT, function () {\r\n    console.log(\"server started on port http://localhost:\" + PORT);\r\n});\r\n\n\n//# sourceURL=webpack:///./src/server/server.js?");
+
+/***/ }),
+
+/***/ "./src/shared/Alert/Alert.tsx":
+/*!************************************!*\
+  !*** ./src/shared/Alert/Alert.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Alert = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar alert_css_1 = __importDefault(__webpack_require__(/*! ./alert.css */ \"./src/shared/Alert/alert.css\"));\r\nvar useTypeSelector_1 = __webpack_require__(/*! ../../hooks/useTypeSelector */ \"./src/hooks/useTypeSelector.ts\");\r\nvar react_transition_group_1 = __webpack_require__(/*! react-transition-group */ \"react-transition-group\");\r\nfunction Alert() {\r\n    var _a = useTypeSelector_1.useTypeSelector(function (state) { return state.alert; }), text = _a.text, type = _a.type, visible = _a.visible;\r\n    return (react_1.default.createElement(react_transition_group_1.CSSTransition, { classNames: \"alert\", timeout: 500, in: visible, mountOnEnter: true, unmountOnExit: true },\r\n        react_1.default.createElement(\"div\", { className: alert_css_1.default.alert + \" \" + type }, text)));\r\n}\r\nexports.Alert = Alert;\r\n\n\n//# sourceURL=webpack:///./src/shared/Alert/Alert.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Alert/alert.css":
+/*!************************************!*\
+  !*** ./src/shared/Alert/alert.css ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"alert\": \"alert__alert--1-xsC\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Alert/alert.css?");
+
+/***/ }),
+
+/***/ "./src/shared/Alert/index.ts":
+/*!***********************************!*\
+  !*** ./src/shared/Alert/index.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Alert */ \"./src/shared/Alert/Alert.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Alert/index.ts?");
 
 /***/ }),
 
@@ -411,7 +446,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Layout = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nfunction Layout(_a) {\r\n    var children = _a.children;\r\n    return react_1.default.createElement(\"div\", null, children);\r\n}\r\nexports.Layout = Layout;\r\n\n\n//# sourceURL=webpack:///./src/shared/Layout/Layout.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.Layout = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar layout_css_1 = __importDefault(__webpack_require__(/*! ./layout.css */ \"./src/shared/Layout/layout.css\"));\r\nfunction Layout(_a) {\r\n    var children = _a.children;\r\n    return react_1.default.createElement(\"div\", { className: layout_css_1.default.layout }, children);\r\n}\r\nexports.Layout = Layout;\r\n\n\n//# sourceURL=webpack:///./src/shared/Layout/Layout.tsx?");
 
 /***/ }),
 
@@ -424,6 +459,17 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 "use strict";
 eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./Layout */ \"./src/shared/Layout/Layout.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Layout/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/Layout/layout.css":
+/*!**************************************!*\
+  !*** ./src/shared/Layout/layout.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"layout\": \"layout__layout--2fANc\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Layout/layout.css?");
 
 /***/ }),
 
@@ -497,6 +543,18 @@ eval("// Exports\nmodule.exports = {\n\t\"s28\": \"text__s28--Puvgs\",\n\t\"s20\
 
 /***/ }),
 
+/***/ "./src/store/action-creator/alert.ts":
+/*!*******************************************!*\
+  !*** ./src/store/action-creator/alert.ts ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.show = void 0;\r\nvar alert_1 = __webpack_require__(/*! ../types/alert */ \"./src/store/types/alert.ts\");\r\nvar show = function (text, type) {\r\n    if (type === void 0) { type = \"warning\"; }\r\n    return function (dispatch) {\r\n        dispatch({ type: alert_1.AlertAction.SHOW_ALERT, payload: { text: text, type: type } });\r\n        setTimeout(function () {\r\n            dispatch({ type: alert_1.AlertAction.HIDE_ALERT });\r\n        }, 5000);\r\n    };\r\n};\r\nexports.show = show;\r\n\n\n//# sourceURL=webpack:///./src/store/action-creator/alert.ts?");
+
+/***/ }),
+
 /***/ "./src/store/action-creator/bg.ts":
 /*!****************************************!*\
   !*** ./src/store/action-creator/bg.ts ***!
@@ -529,7 +587,7 @@ eval("\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _argume
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar CinemaCreators = __importStar(__webpack_require__(/*! ./cinema */ \"./src/store/action-creator/cinema.ts\"));\r\nvar BgCreators = __importStar(__webpack_require__(/*! ./bg */ \"./src/store/action-creator/bg.ts\"));\r\nexports.default = __assign(__assign({}, CinemaCreators), BgCreators);\r\n\n\n//# sourceURL=webpack:///./src/store/action-creator/index.ts?");
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar CinemaCreators = __importStar(__webpack_require__(/*! ./cinema */ \"./src/store/action-creator/cinema.ts\"));\r\nvar BgCreators = __importStar(__webpack_require__(/*! ./bg */ \"./src/store/action-creator/bg.ts\"));\r\nvar AlertCreators = __importStar(__webpack_require__(/*! ./alert */ \"./src/store/action-creator/alert.ts\"));\r\nexports.default = __assign(__assign(__assign({}, CinemaCreators), BgCreators), AlertCreators);\r\n\n\n//# sourceURL=webpack:///./src/store/action-creator/index.ts?");
 
 /***/ }),
 
@@ -542,6 +600,18 @@ eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assig
 
 "use strict";
 eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.store = void 0;\r\nvar redux_1 = __webpack_require__(/*! redux */ \"redux\");\r\nvar redux_thunk_1 = __importDefault(__webpack_require__(/*! redux-thunk */ \"redux-thunk\"));\r\nvar reducers_1 = __webpack_require__(/*! ./reducers */ \"./src/store/reducers/index.ts\");\r\nexports.store = redux_1.createStore(reducers_1.rootReducer, redux_1.applyMiddleware(redux_thunk_1.default));\r\n\n\n//# sourceURL=webpack:///./src/store/index.ts?");
+
+/***/ }),
+
+/***/ "./src/store/reducers/alertReducer.ts":
+/*!********************************************!*\
+  !*** ./src/store/reducers/alertReducer.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.alertReducer = void 0;\r\nvar alert_1 = __webpack_require__(/*! ../types/alert */ \"./src/store/types/alert.ts\");\r\nvar initialState = {\r\n    text: \"\",\r\n    type: \"\",\r\n    visible: false,\r\n};\r\nvar alertReducer = function (state, action) {\r\n    if (state === void 0) { state = initialState; }\r\n    switch (action.type) {\r\n        case alert_1.AlertAction.SHOW_ALERT:\r\n            return __assign(__assign(__assign({}, state), action.payload), { visible: true });\r\n        case alert_1.AlertAction.HIDE_ALERT:\r\n            return __assign(__assign({}, state), { visible: false, type: \"\", text: \"\" });\r\n        default:\r\n            return state;\r\n    }\r\n};\r\nexports.alertReducer = alertReducer;\r\n\n\n//# sourceURL=webpack:///./src/store/reducers/alertReducer.ts?");
 
 /***/ }),
 
@@ -577,7 +647,19 @@ eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assig
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.rootReducer = void 0;\r\nvar redux_1 = __webpack_require__(/*! redux */ \"redux\");\r\nvar cinemaReducer_1 = __webpack_require__(/*! ./cinemaReducer */ \"./src/store/reducers/cinemaReducer.ts\");\r\nvar bgReducer_1 = __webpack_require__(/*! ./bgReducer */ \"./src/store/reducers/bgReducer.ts\");\r\nexports.rootReducer = redux_1.combineReducers({\r\n    cinema: cinemaReducer_1.cinemaReducer,\r\n    bg: bgReducer_1.bgReducer,\r\n});\r\n\n\n//# sourceURL=webpack:///./src/store/reducers/index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.rootReducer = void 0;\r\nvar redux_1 = __webpack_require__(/*! redux */ \"redux\");\r\nvar cinemaReducer_1 = __webpack_require__(/*! ./cinemaReducer */ \"./src/store/reducers/cinemaReducer.ts\");\r\nvar bgReducer_1 = __webpack_require__(/*! ./bgReducer */ \"./src/store/reducers/bgReducer.ts\");\r\nvar alertReducer_1 = __webpack_require__(/*! ./alertReducer */ \"./src/store/reducers/alertReducer.ts\");\r\nexports.rootReducer = redux_1.combineReducers({\r\n    cinema: cinemaReducer_1.cinemaReducer,\r\n    bg: bgReducer_1.bgReducer,\r\n    alert: alertReducer_1.alertReducer,\r\n});\r\n\n\n//# sourceURL=webpack:///./src/store/reducers/index.ts?");
+
+/***/ }),
+
+/***/ "./src/store/types/alert.ts":
+/*!**********************************!*\
+  !*** ./src/store/types/alert.ts ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.AlertAction = void 0;\r\nvar AlertAction;\r\n(function (AlertAction) {\r\n    AlertAction[\"SHOW_ALERT\"] = \"SHOW_ALERT\";\r\n    AlertAction[\"HIDE_ALERT\"] = \"HIDE_ALERT\";\r\n})(AlertAction = exports.AlertAction || (exports.AlertAction = {}));\r\n\n\n//# sourceURL=webpack:///./src/store/types/alert.ts?");
 
 /***/ }),
 
@@ -713,6 +795,17 @@ eval("module.exports = require(\"react-hot-loader/root\");\n\n//# sourceURL=webp
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react-redux\");\n\n//# sourceURL=webpack:///external_%22react-redux%22?");
+
+/***/ }),
+
+/***/ "react-transition-group":
+/*!*****************************************!*\
+  !*** external "react-transition-group" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-transition-group\");\n\n//# sourceURL=webpack:///external_%22react-transition-group%22?");
 
 /***/ }),
 

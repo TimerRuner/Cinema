@@ -1,7 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import styles from "./header.css"
 import { Button } from "../../UI/Button"
 import { SearchInput } from "../SearchInput"
+import { useActions } from "../../hooks/useAction"
 
 export function Header() {
     return (

@@ -84,6 +84,12 @@ h6 {
 :root {
     --black: #000;
     --white: #fff;
+    --green: #d4edda;
+    --border-green: #c3e6cb;
+    --yellow: #fff3cd;
+    --border-yellow: #ffeeba;
+    --red: #f8d7da;
+    --border-red: #f5c6cb;
 }
 
 body {
@@ -93,4 +99,58 @@ body {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+/*Alert type color*/
+.warning {
+    background-color: var(--yellow);
+    border: 1px solid var(--border-yellow);
+}
+.error {
+    background-color: var(--red);
+    border: 1px solid var(--border-red);
+}
+.success {
+    background-color: var(--gree);
+    border: 1px solid var(--border-green);
+}
+
+/* Alert anim action*/
+
+/* .alert-enter {
+    opacity: 0;
+    transform: translateY(200px);
+}
+.alert-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.alert-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.alert-exit-active {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: opacity 0.5s, transform 0.5s;
+} */
+
+.alert-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.alert-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms, transform 500ms;
+}
+.alert-exit {
+    opacity: 1;
+}
+.alert-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 500ms, transform 500ms;
 }

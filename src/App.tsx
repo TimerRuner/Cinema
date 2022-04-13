@@ -6,6 +6,7 @@ import { Header } from "./shared/Header"
 import { CardList } from "./shared/CardList"
 import { Provider } from "react-redux"
 import { store } from "./store"
+import { Alert } from "./shared/Alert"
 
 export function AppCopmonent() {
     return (
@@ -13,6 +14,7 @@ export function AppCopmonent() {
             <Layout>
                 <Header />
                 <CardList />
+                <Alert />
             </Layout>
         </Provider>
     )

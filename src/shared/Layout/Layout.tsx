@@ -6,5 +6,5 @@ interface ILayoutProps {
 }
 
 export function Layout({ children }: ILayoutProps) {
-    return <div>{children}</div>
+    return <div className={styles.layout}>{children}</div>
 }
