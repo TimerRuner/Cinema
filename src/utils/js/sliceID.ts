@@ -1,7 +1,7 @@
-export const sliceID =
-    (ids: string[]) =>
+export const sliceMovie =
+    (movies: any[]) =>
     (page: number, limit: number): string[] => {
         const from = page * limit - limit
         const to = page * limit
-        return ids.slice(from, to)
+        return movies.slice(from, to)
     }

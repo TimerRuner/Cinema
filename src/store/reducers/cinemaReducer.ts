@@ -8,6 +8,7 @@ const initialState: CinemaState = {
     perPage: 12,
     error: "",
     loading: false,
+    sortedMovies: [{}],
 }
 
 export const cinemaReducer = (
@@ -23,6 +24,8 @@ export const cinemaReducer = (
             return { ...state, currentMovies: action.payload, loading: false }
         case CinemaActionTypes.FETCH_MOVIES_ERROR:
             return { ...state, error: action.payload, loading: false }
+        case CinemaActionTypes.SEARCH_CINEMA:
+            return { ...state, sortedMovies: action.payload }
         default:
             return state
     }

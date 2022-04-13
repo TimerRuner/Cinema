@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { hot } from "react-hot-loader/root"
 import "./main.global.css"
 import { Layout } from "./shared/Layout"
@@ -7,6 +7,7 @@ import { CardList } from "./shared/CardList"
 import { Provider } from "react-redux"
 import { store } from "./store"
 import { Alert } from "./shared/Alert"
+import { initCinema } from "./store/action-creator/cinema"
 
 export function AppCopmonent() {
     return (

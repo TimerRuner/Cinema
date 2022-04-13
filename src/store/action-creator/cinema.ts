@@ -1,15 +1,10 @@
 import axios from "../../plugins/axios"
 import { Dispatch } from "react"
 import { CinemaAction, CinemaActionTypes } from "../types/cinema"
-import { sliceID } from "../../utils/js/sliceID"
+import { sliceMovie } from "../../utils/js/sliceID"
 import ids from "../../db/ids"
 
-type fetching = (
-    page: number,
-    limit: number,
-    id: string[],
-    movies: any[]
-) => void
+type fetching = (page: number, limit: number, movies: any[]) => void
 
 export const initData = async () => {
     if (!localStorage.getItem("ids")) {
@@ -19,12 +14,12 @@ export const initData = async () => {
         const films = await Promise.all(ids.map((id) => axios.get(`/?i=${id}`)))
         localStorage.setItem("films", JSON.stringify(films))
     }
-    const idsFilms = localStorage.getItem("ids")
-    const allMovies = localStorage.getItem("films")
+    const idsFilms = JSON.parse(localStorage.getItem("ids") || "[]")
+    const allMovies = JSON.parse(localStorage.getItem("films") || "[]")
 
     return {
-        id: JSON.parse(idsFilms || "[]"),
-        movies: JSON.parse(allMovies || "[]"),
+        id: idsFilms,
+        movies: allMovies,
     }
 }
 
@@ -45,24 +40,16 @@ export const initCinema = () => {
     }
 }
 
-export const fetchCinema: fetching = (
-    page = 1,
-    limit = 12,
-    ids = [],
-    movies = []
-) => {
-    const slicedID = sliceID(ids)(page, limit)
+export const fetchCinema: fetching = (page = 1, limit = 12, movies = []) => {
+    const slicedID = sliceMovie(movies)(page, limit)
 
     return async (dispatch: Dispatch<CinemaAction>) => {
         try {
             dispatch({ type: CinemaActionTypes.FETCH_MOVIES })
-            const response = slicedID.map((id) =>
-                movies.find((item) => item.imdbID === id)
-            )
 
             dispatch({
                 type: CinemaActionTypes.FETCH_MOVIES_SUCCESS,
-                payload: response,
+                payload: slicedID,
             })
         } catch (error) {
             dispatch({
@@ -72,3 +59,8 @@ export const fetchCinema: fetching = (
         }
     }
 }
+
+export const searchCinema = (movies: any[]) => ({
+    type: CinemaActionTypes.SEARCH_CINEMA,
+    payload: movies,
+})
