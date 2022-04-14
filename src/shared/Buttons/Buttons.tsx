@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styles from "./buttons.css"
 import { Button } from "../../UI/Button"
-import { useTypeSelector } from "../../hooks/useTypeSelector"
 import { DeleteModal } from "../DeleteModal/DeleteModal"
 
 interface IButtonsProps {
@@ -11,13 +10,13 @@ interface IButtonsProps {
 export function Buttons({ identifire }: IButtonsProps) {
     const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
-    const removeHandler = (id: string): void => {
+    const removeHandler = (): void => {
         setOpenDeleteModal(true)
     }
     return (
         <div className={styles.buttons}>
             <Button>Edit</Button>
-            <Button onClick={() => removeHandler(identifire)}>Remove</Button>
+            <Button onClick={() => removeHandler()}>Remove</Button>
             <DeleteModal
                 onOpen={openDeleteModal}
                 setClose={setOpenDeleteModal}
