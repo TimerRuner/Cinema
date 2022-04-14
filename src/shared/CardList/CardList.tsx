@@ -4,18 +4,16 @@ import { useTypeSelector } from "../../hooks/useTypeSelector"
 import { useActions } from "../../hooks/useAction"
 import { Card } from "./Card/Card"
 import { AppBg } from "../AppBg"
+import { Pagination } from "../Pagination"
+import { getTotalPage } from "../../utils/js/getTotalPage"
 
 export function CardList() {
-    const {
-        id,
-        movies,
-        currentMovies,
-        currentPage,
-        perPage,
-        loading,
-        sortedMovies,
-    } = useTypeSelector((state) => state.cinema)
+    const { id, movies, currentMovies, loading, sortedMovies } =
+        useTypeSelector((state) => state.cinema)
     const { fetchCinema, initCinema } = useActions()
+    const [currentPage, setCurrentPage] = useState(1)
+    const [perPage, setPerPage] = useState(12)
+    const [totalPage, setTotalPage] = useState(0)
 
     useEffect(() => {
         initCinema()
@@ -23,6 +21,7 @@ export function CardList() {
 
     useEffect(() => {
         fetchCinema(currentPage, perPage, sortedMovies)
+        setTotalPage(getTotalPage(sortedMovies.length, perPage))
     }, [currentPage, sortedMovies, movies, id])
 
     return (
@@ -48,6 +47,13 @@ export function CardList() {
                 </div>
             </div>
             <AppBg />
+            {totalPage && (
+                <Pagination
+                    total={totalPage}
+                    current={currentPage}
+                    setPage={setCurrentPage}
+                />
+            )}
         </div>
     )
 }
