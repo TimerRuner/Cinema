@@ -13,7 +13,6 @@ interface ICardProps {
 
 export function Card({ title, src, id, year }: ICardProps) {
     const { changeBg } = useActions()
-
     const hoverHandler = (src: string): void => {
         changeBg(src)
     }
@@ -34,7 +33,7 @@ export function Card({ title, src, id, year }: ICardProps) {
                             </Text>
                         </span>
                     </div>
-                    <Buttons />
+                    <Buttons identifire={id} />
                 </div>
             </div>
         </div>
