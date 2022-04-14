@@ -1,4 +1,4 @@
-export const indexTemplate = (content)=>`
+export const indexTemplate = (content) => `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,8 @@ export const indexTemplate = (content)=>`
 
 <body>
   <div id="react_root">${content}</div>
+  <div id="delete_modal"></div>
 </body>
 
 </html>
-`;
+`

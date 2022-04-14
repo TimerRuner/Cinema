@@ -111,31 +111,11 @@ body {
     border: 1px solid var(--border-red);
 }
 .success {
-    background-color: var(--gree);
+    background-color: var(--green);
     border: 1px solid var(--border-green);
 }
 
 /* Alert anim action*/
-
-/* .alert-enter {
-    opacity: 0;
-    transform: translateY(200px);
-}
-.alert-enter-active {
-    transform: translateY(0);
-    opacity: 1;
-    transition: opacity 0.5s, transform 0.5s;
-}
-
-.alert-exit {
-    opacity: 1;
-    transform: translateY(0);
-}
-.alert-exit-active {
-    opacity: 0;
-    transform: translateY(200px);
-    transition: opacity 0.5s, transform 0.5s;
-} */
 
 .alert-enter {
     opacity: 0;
@@ -152,5 +132,41 @@ body {
 .alert-exit-active {
     opacity: 0;
     transform: scale(0.9);
+    transition: opacity 500ms, transform 500ms;
+}
+
+/* Delete Modal animation*/
+.deleteModal-enter {
+    opacity: 0;
+}
+.deleteModal-enter-active {
+    opacity: 1;
+    transition: opacity 500ms, transform 500ms;
+}
+.deleteModal-exit {
+    opacity: 1;
+}
+.deleteModal-exit-active {
+    opacity: 0;
+    transition: opacity 500ms, transform 500ms;
+}
+
+/* Card Animation */
+.card-enter {
+    opacity: 0;
+    transform: scale(0);
+}
+.card-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 500ms, transform 500ms;
+}
+.card-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+.card-exit-active {
+    opacity: 0;
+    transform: scale(0);
     transition: opacity 500ms, transform 500ms;
 }

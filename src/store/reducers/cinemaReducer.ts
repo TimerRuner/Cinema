@@ -17,7 +17,7 @@ export const cinemaReducer = (
 ): CinemaState => {
     switch (action.type) {
         case CinemaActionTypes.INIT_CINEMA:
-            return { ...state, loading: true, ...action.payload }
+            return { ...state, ...action.payload, loading: true }
         case CinemaActionTypes.FETCH_MOVIES:
             return { ...state, loading: true }
         case CinemaActionTypes.FETCH_MOVIES_SUCCESS:

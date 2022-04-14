@@ -24,4 +24,19 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 -10px;
+    transition: all 0.5s ease;
+}
+
+.cardList__empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--yellow);
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 22px;
 }

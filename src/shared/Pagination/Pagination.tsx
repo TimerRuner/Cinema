@@ -8,14 +8,6 @@ interface IPaginationProps {
 }
 
 export function Pagination({ total, current, setPage }: IPaginationProps) {
-    const pages: number[] = useMemo(() => {
-        let pageArray = []
-        for (let i = 1; i <= total; i++) {
-            pageArray.push(i)
-        }
-        return pageArray
-    }, [total])
-
     return (
         <div className={styles.pagination}>
             <div className="container">

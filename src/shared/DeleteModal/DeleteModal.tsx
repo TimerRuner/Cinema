@@ -15,6 +15,7 @@ interface IDeleteModalProps {
 
 export function DeleteModal({ onOpen, setClose, id }: IDeleteModalProps) {
     const { movies, id: ids } = useTypeSelector((state) => state.cinema)
+    const title = movies.find((movie) => movie.imdbID === id)?.Title
 
     const { addNewIdAndMovies, show } = useActions()
     const [isMounted] = useIsMounted()
@@ -31,7 +32,7 @@ export function DeleteModal({ onOpen, setClose, id }: IDeleteModalProps) {
         }
     }
 
-    const removeHandler = (id: string): void => {
+    const removeHandler = (id: string, title: string): void => {
         const newMovies = movies.filter((movie) => movie.imdbID !== id)
         const newId = ids.filter((item) => item !== id)
 
@@ -39,7 +40,7 @@ export function DeleteModal({ onOpen, setClose, id }: IDeleteModalProps) {
         setLocalStorage("ids", newId)
         addNewIdAndMovies({ id: newId, movies: newMovies })
         setClose(false)
-        show("Deleted film", "success")
+        show(`Deleted film ${title}`, "success")
     }
 
     return ReactDOM.createPortal(
@@ -54,7 +55,7 @@ export function DeleteModal({ onOpen, setClose, id }: IDeleteModalProps) {
                 <div className={styles.modal} ref={modal}>
                     <div className={styles.modal__wrapper}>
                         <h2 className={styles.modal__title}>
-                            Do you really want to remove this film ?
+                            Do you really want to remove this film {title} ?
                         </h2>
                         <div className={styles.modal__buttons}>
                             <button
@@ -65,7 +66,7 @@ export function DeleteModal({ onOpen, setClose, id }: IDeleteModalProps) {
                             </button>
                             <button
                                 className={styles.modal__btn}
-                                onClick={() => removeHandler(id)}
+                                onClick={() => removeHandler(id, title)}
                             >
                                 Remove
                             </button>

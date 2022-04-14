@@ -26,6 +26,7 @@ export const initData = async () => {
 export const initCinema = () => {
     return async (dispatch: Dispatch<CinemaAction>) => {
         try {
+            dispatch({ type: CinemaActionTypes.FETCH_MOVIES })
             const data = await initData()
             dispatch({
                 type: CinemaActionTypes.INIT_CINEMA,
@@ -43,24 +44,18 @@ export const initCinema = () => {
 export const fetchCinema: fetching = (page = 1, limit = 12, movies = []) => {
     const slicedID = sliceMovie(movies)(page, limit)
 
-    return async (dispatch: Dispatch<CinemaAction>) => {
-        try {
-            dispatch({ type: CinemaActionTypes.FETCH_MOVIES })
-
-            dispatch({
-                type: CinemaActionTypes.FETCH_MOVIES_SUCCESS,
-                payload: slicedID,
-            })
-        } catch (error) {
-            dispatch({
-                type: CinemaActionTypes.FETCH_MOVIES_ERROR,
-                payload: String(error),
-            })
-        }
+    return {
+        type: CinemaActionTypes.FETCH_MOVIES_SUCCESS,
+        payload: slicedID,
     }
 }
 
 export const searchCinema = (movies: any[]) => ({
     type: CinemaActionTypes.SEARCH_CINEMA,
     payload: movies,
+})
+
+export const addNewIdAndMovies = (data: { id: string[]; movies: any[] }) => ({
+    type: CinemaActionTypes.INIT_CINEMA,
+    payload: data,
 })
