@@ -1,0 +1,16 @@
+.additional {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 15px 0;
+}
+.additional_info {
+    padding: 3px 5px;
+    white-space: nowrap;
+    background: rgb(7, 146, 7);
+    color: var(--white);
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+}

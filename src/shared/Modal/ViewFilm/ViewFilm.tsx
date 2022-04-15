@@ -3,6 +3,9 @@ import styles from "./viewfilm.css"
 import { Buttons } from "../../Buttons"
 import { useParams } from "react-router-dom"
 import { useTypeSelector } from "../../../hooks/useTypeSelector"
+import { StarRating } from "../../StarRating"
+import { AdditionalInfo } from "../../AdditionalInfo"
+import { getTime } from "../../../utils/js/getTime"
 
 export function ViewFilm() {
     const { id } = useParams()
@@ -11,12 +14,16 @@ export function ViewFilm() {
     if (!id) return null
 
     /*
-      Metascore, // 91
       Genre, // Drama
       Runtime, // 138 min
+      Year
     */
 
-    console.log(film?.Metascore, film?.Genre, film?.Runtime)
+    const additionalInfo = [
+        film?.Year,
+        film?.Genre,
+        getTime(parseInt(film?.Runtime)),
+    ]
 
     return (
         <div className={styles.about}>
@@ -28,9 +35,9 @@ export function ViewFilm() {
             </div>
             <div className={styles.about__content}>
                 <h2 className={styles.about__title}>{film?.Title}</h2>
-                {/* Rating */}
+                <StarRating rating={film?.Metascore} />
                 <p className={styles.about__text}>{film?.Plot}</p>
-                {/* AdditionalInfo */}
+                <AdditionalInfo info={additionalInfo} />
                 <table>
                     <tbody>
                         <tr>

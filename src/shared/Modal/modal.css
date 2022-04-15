@@ -8,12 +8,8 @@
     z-index: 5;
 }
 .modal {
-    width: 1140px;
-    max-width: 80vw;
-    height: auto;
-    max-height: 80vh;
+    display: inline-block;
     background-color: var(--white);
-    overflow-y: auto;
     position: relative;
     top: 100px;
     left: 50%;
