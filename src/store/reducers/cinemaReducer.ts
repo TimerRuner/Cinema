@@ -20,7 +20,7 @@ export const cinemaReducer = (
             return { ...state, ...action.payload, loading: true }
         case CinemaActionTypes.FETCH_MOVIES:
             return { ...state, loading: true }
-        case CinemaActionTypes.FETCH_MOVIES_SUCCESS:
+        case CinemaActionTypes.PAGINATION:
             return { ...state, currentMovies: action.payload, loading: false }
         case CinemaActionTypes.FETCH_MOVIES_ERROR:
             return { ...state, error: action.payload, loading: false }

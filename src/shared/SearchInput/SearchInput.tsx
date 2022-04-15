@@ -19,7 +19,7 @@ export function SearchInput() {
 
     useEffect(() => {
         searchCinema(sortedCinema)
-    }, [sortedCinema, movies])
+    }, [sortedCinema])
 
     return (
         <input

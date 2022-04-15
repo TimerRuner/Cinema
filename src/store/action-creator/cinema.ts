@@ -45,7 +45,7 @@ export const fetchCinema: fetching = (page = 1, limit = 12, movies = []) => {
     const slicedID = sliceMovie(movies)(page, limit)
 
     return {
-        type: CinemaActionTypes.FETCH_MOVIES_SUCCESS,
+        type: CinemaActionTypes.PAGINATION,
         payload: slicedID,
     }
 }

@@ -14,7 +14,7 @@ export interface InitCinemaType {
 }
 
 export enum CinemaActionTypes {
-    FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS",
+    PAGINATION = "PAGINATION",
     FETCH_MOVIES_ERROR = "FETCH_MOVIES_ERROR",
     FETCH_MOVIES = "FETCH_MOVIES",
     INIT_CINEMA = "INIT_CINEMA",
@@ -25,7 +25,7 @@ interface FetchCinemaAction {
     type: CinemaActionTypes.FETCH_MOVIES
 }
 interface FetchCinemaSuccessAction {
-    type: CinemaActionTypes.FETCH_MOVIES_SUCCESS
+    type: CinemaActionTypes.PAGINATION
     payload: Array<any>
 }
 interface FetchCinemaErrorAction {

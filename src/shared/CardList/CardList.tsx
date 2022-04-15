@@ -10,8 +10,9 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 import { Loader } from "../../UI/Loader"
 
 export function CardList() {
-    const { id, movies, currentMovies, sortedMovies, loading, error } =
-        useTypeSelector((state) => state.cinema)
+    const { currentMovies, sortedMovies, loading, error } = useTypeSelector(
+        (state) => state.cinema
+    )
     const { fetchCinema, initCinema } = useActions()
     const [currentPage, setCurrentPage] = useState(1)
     const [perPage, setPerPage] = useState(12)
@@ -24,7 +25,7 @@ export function CardList() {
     useEffect(() => {
         fetchCinema(currentPage, perPage, sortedMovies)
         setTotalPage(getTotalPage(sortedMovies.length, perPage))
-    }, [currentPage, sortedMovies, movies, id])
+    }, [currentPage, sortedMovies])
 
     return (
         <div className={styles.cardList}>
