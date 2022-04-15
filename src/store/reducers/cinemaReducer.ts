@@ -2,13 +2,13 @@ import { CinemaState, CinemaAction, CinemaActionTypes } from "../types/cinema"
 
 const initialState: CinemaState = {
     id: [],
-    currentMovies: [{}],
-    movies: [{}],
+    currentMovies: [],
+    movies: [],
     currentPage: 1,
     perPage: 12,
     error: "",
     loading: false,
-    sortedMovies: [{}],
+    sortedMovies: [],
 }
 
 export const cinemaReducer = (
