@@ -11,7 +11,7 @@
         "build": "env NODE_ENV=production webpack --config webpack.config.js",
         "dev": "env NODE_ENV=development node ./bin/dev.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "env node ./dist/server/server.js"
+        "start": "node ./dist/server/server.js"
     },
     "author": "",
     "license": "ISC",

@@ -271,7 +271,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nfu
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.indexTemplate = void 0;\r\nvar indexTemplate = function (content) { return \"\\n<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <title>Reddit</title>\\n  <script src=\\\"/static/client.js\\\" type=\\\"application/javascript\\\"></script>\\n</head>\\n\\n<body>\\n  <div id=\\\"react_root\\\">\" + content + \"</div>\\n  <div id=\\\"delete_modal\\\"></div>\\n</body>\\n\\n</html>\\n\"; };\r\nexports.indexTemplate = indexTemplate;\r\n\n\n//# sourceURL=webpack:///./src/server/indexTemplate.js?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.indexTemplate = void 0;\r\nvar indexTemplate = function (content) { return \"\\n<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <link\\n    rel=\\\"stylesheet\\\"\\n    href=\\\"https://use.fontawesome.com/releases/v5.6.1/css/all.css\\\"\\n    integrity=\\\"sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP\\\"\\n    crossorigin=\\\"anonymous\\\"\\n  />\\n  <title>Reddit</title>\\n  <script src=\\\"/static/client.js\\\" type=\\\"application/javascript\\\"></script>\\n</head>\\n\\n<body>\\n  <div id=\\\"react_root\\\">\" + content + \"</div>\\n  <div id=\\\"delete_modal\\\"></div>\\n</body>\\n\\n</html>\\n\"; };\r\nexports.indexTemplate = indexTemplate;\r\n\n\n//# sourceURL=webpack:///./src/server/indexTemplate.js?");
 
 /***/ }),
 
@@ -284,6 +284,41 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 
 "use strict";
 eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nvar server_1 = __importDefault(__webpack_require__(/*! react-dom/server */ \"react-dom/server\"));\r\nvar App_tsx_1 = __webpack_require__(/*! ../App.tsx */ \"./src/App.tsx\");\r\nvar indexTemplate_1 = __webpack_require__(/*! ./indexTemplate */ \"./src/server/indexTemplate.js\");\r\nvar compression_1 = __importDefault(__webpack_require__(/*! compression */ \"compression\"));\r\nvar PORT = process.env.PORT || 3000;\r\nvar app = express_1.default();\r\napp.use(compression_1.default());\r\n// app.use(\r\n//     helmet({\r\n//         contentSecurityPolicy: false,\r\n//         crossOriginEmbedderPolicy: false,\r\n//     })\r\n// )\r\napp.use(\"/static\", express_1.default.static(\"./dist/client\"));\r\napp.get(\"*\", function (req, res) {\r\n    res.send(indexTemplate_1.indexTemplate(server_1.default.renderToString(App_tsx_1.App())));\r\n});\r\napp.listen(PORT, function () {\r\n    console.log(\"server started on port http://localhost:\" + PORT);\r\n});\r\n\n\n//# sourceURL=webpack:///./src/server/server.js?");
+
+/***/ }),
+
+/***/ "./src/shared/AdditionalInfo/AdditionalInfo.tsx":
+/*!******************************************************!*\
+  !*** ./src/shared/AdditionalInfo/AdditionalInfo.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.AdditionalInfo = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar additionalinfo_css_1 = __importDefault(__webpack_require__(/*! ./additionalinfo.css */ \"./src/shared/AdditionalInfo/additionalinfo.css\"));\r\nfunction AdditionalInfo(_a) {\r\n    var info = _a.info;\r\n    return (react_1.default.createElement(\"div\", { className: additionalinfo_css_1.default.additional }, info.map(function (item) { return (react_1.default.createElement(\"div\", { className: additionalinfo_css_1.default.additional_info }, item)); })));\r\n}\r\nexports.AdditionalInfo = AdditionalInfo;\r\n\n\n//# sourceURL=webpack:///./src/shared/AdditionalInfo/AdditionalInfo.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/AdditionalInfo/additionalinfo.css":
+/*!******************************************************!*\
+  !*** ./src/shared/AdditionalInfo/additionalinfo.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"additional\": \"additionalinfo__additional--3noHy\",\n\t\"additional_info\": \"additionalinfo__additional_info--3opcZ\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/AdditionalInfo/additionalinfo.css?");
+
+/***/ }),
+
+/***/ "./src/shared/AdditionalInfo/index.ts":
+/*!********************************************!*\
+  !*** ./src/shared/AdditionalInfo/index.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./AdditionalInfo */ \"./src/shared/AdditionalInfo/AdditionalInfo.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/AdditionalInfo/index.ts?");
 
 /***/ }),
 
@@ -563,7 +598,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.ViewFilm = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar viewfilm_css_1 = __importDefault(__webpack_require__(/*! ./viewfilm.css */ \"./src/shared/Modal/ViewFilm/viewfilm.css\"));\r\nvar Buttons_1 = __webpack_require__(/*! ../../Buttons */ \"./src/shared/Buttons/index.ts\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\r\nvar useTypeSelector_1 = __webpack_require__(/*! ../../../hooks/useTypeSelector */ \"./src/hooks/useTypeSelector.ts\");\r\nfunction ViewFilm() {\r\n    var id = react_router_dom_1.useParams().id;\r\n    var movies = useTypeSelector_1.useTypeSelector(function (state) { return state.cinema; }).movies;\r\n    var film = movies.find(function (movie) { return movie.imdbID === id; });\r\n    if (!id)\r\n        return null;\r\n    /*\r\n      Metascore, // 91\r\n      Genre, // Drama\r\n      Runtime, // 138 min\r\n    */\r\n    console.log(film === null || film === void 0 ? void 0 : film.Metascore, film === null || film === void 0 ? void 0 : film.Genre, film === null || film === void 0 ? void 0 : film.Runtime);\r\n    return (react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about },\r\n        react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__view },\r\n            react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__img },\r\n                react_1.default.createElement(\"img\", { src: film === null || film === void 0 ? void 0 : film.Poster, alt: \"poster\" })),\r\n            react_1.default.createElement(Buttons_1.Buttons, { identifire: id })),\r\n        react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__content },\r\n            react_1.default.createElement(\"h2\", { className: viewfilm_css_1.default.about__title }, film === null || film === void 0 ? void 0 : film.Title),\r\n            react_1.default.createElement(\"p\", { className: viewfilm_css_1.default.about__text }, film === null || film === void 0 ? void 0 : film.Plot),\r\n            react_1.default.createElement(\"table\", null,\r\n                react_1.default.createElement(\"tbody\", null,\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Production\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Production)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Country\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Country)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Dierector\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Director)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Writer\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Writer)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Actors\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Actors)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Awards\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Awards)))))));\r\n}\r\nexports.ViewFilm = ViewFilm;\r\n\n\n//# sourceURL=webpack:///./src/shared/Modal/ViewFilm/ViewFilm.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.ViewFilm = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar viewfilm_css_1 = __importDefault(__webpack_require__(/*! ./viewfilm.css */ \"./src/shared/Modal/ViewFilm/viewfilm.css\"));\r\nvar Buttons_1 = __webpack_require__(/*! ../../Buttons */ \"./src/shared/Buttons/index.ts\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\r\nvar useTypeSelector_1 = __webpack_require__(/*! ../../../hooks/useTypeSelector */ \"./src/hooks/useTypeSelector.ts\");\r\nvar StarRating_1 = __webpack_require__(/*! ../../StarRating */ \"./src/shared/StarRating/index.ts\");\r\nvar AdditionalInfo_1 = __webpack_require__(/*! ../../AdditionalInfo */ \"./src/shared/AdditionalInfo/index.ts\");\r\nvar getTime_1 = __webpack_require__(/*! ../../../utils/js/getTime */ \"./src/utils/js/getTime.ts\");\r\nfunction ViewFilm() {\r\n    var id = react_router_dom_1.useParams().id;\r\n    var movies = useTypeSelector_1.useTypeSelector(function (state) { return state.cinema; }).movies;\r\n    var film = movies.find(function (movie) { return movie.imdbID === id; });\r\n    if (!id)\r\n        return null;\r\n    /*\r\n      Genre, // Drama\r\n      Runtime, // 138 min\r\n      Year\r\n    */\r\n    var additionalInfo = [\r\n        film === null || film === void 0 ? void 0 : film.Year,\r\n        film === null || film === void 0 ? void 0 : film.Genre,\r\n        getTime_1.getTime(parseInt(film === null || film === void 0 ? void 0 : film.Runtime)),\r\n    ];\r\n    return (react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about },\r\n        react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__view },\r\n            react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__img },\r\n                react_1.default.createElement(\"img\", { src: film === null || film === void 0 ? void 0 : film.Poster, alt: \"poster\" })),\r\n            react_1.default.createElement(Buttons_1.Buttons, { identifire: id })),\r\n        react_1.default.createElement(\"div\", { className: viewfilm_css_1.default.about__content },\r\n            react_1.default.createElement(\"h2\", { className: viewfilm_css_1.default.about__title }, film === null || film === void 0 ? void 0 : film.Title),\r\n            react_1.default.createElement(StarRating_1.StarRating, { rating: film === null || film === void 0 ? void 0 : film.Metascore }),\r\n            react_1.default.createElement(\"p\", { className: viewfilm_css_1.default.about__text }, film === null || film === void 0 ? void 0 : film.Plot),\r\n            react_1.default.createElement(AdditionalInfo_1.AdditionalInfo, { info: additionalInfo }),\r\n            react_1.default.createElement(\"table\", null,\r\n                react_1.default.createElement(\"tbody\", null,\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Production\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Production)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Country\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Country)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Dierector\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Director)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Writer\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Writer)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Actors\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Actors)),\r\n                    react_1.default.createElement(\"tr\", null,\r\n                        react_1.default.createElement(\"th\", null, \"Awards\"),\r\n                        react_1.default.createElement(\"td\", null, film === null || film === void 0 ? void 0 : film.Awards)))))));\r\n}\r\nexports.ViewFilm = ViewFilm;\r\n\n\n//# sourceURL=webpack:///./src/shared/Modal/ViewFilm/ViewFilm.tsx?");
 
 /***/ }),
 
@@ -680,6 +715,41 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /***/ (function(module, exports) {
 
 eval("// Exports\nmodule.exports = {};\n\n\n//# sourceURL=webpack:///./src/shared/SearchInput/searchinput.css?");
+
+/***/ }),
+
+/***/ "./src/shared/StarRating/StarRating.tsx":
+/*!**********************************************!*\
+  !*** ./src/shared/StarRating/StarRating.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.StarRating = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nvar starrating_css_1 = __importDefault(__webpack_require__(/*! ./starrating.css */ \"./src/shared/StarRating/starrating.css\"));\r\n{\r\n    /* <div className={`${styles.rating} ${styles.rating_set}`}>\r\n<div className={styles.rating__body}>\r\n    <div className={styles.rating__active}></div>\r\n</div>\r\n</div> */\r\n}\r\nfunction StarRating(_a) {\r\n    var rating = _a.rating;\r\n    return (react_1.default.createElement(\"div\", { className: starrating_css_1.default.rating },\r\n        react_1.default.createElement(\"div\", { className: starrating_css_1.default.rating__body },\r\n            react_1.default.createElement(\"div\", { className: starrating_css_1.default.rating__active, style: { width: rating + \"%\" } })),\r\n        react_1.default.createElement(\"div\", { className: starrating_css_1.default.rating__value },\r\n            rating,\r\n            \" / 100\")));\r\n}\r\nexports.StarRating = StarRating;\r\n\n\n//# sourceURL=webpack:///./src/shared/StarRating/StarRating.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/StarRating/index.ts":
+/*!****************************************!*\
+  !*** ./src/shared/StarRating/index.ts ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./StarRating */ \"./src/shared/StarRating/StarRating.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/StarRating/index.ts?");
+
+/***/ }),
+
+/***/ "./src/shared/StarRating/starrating.css":
+/*!**********************************************!*\
+  !*** ./src/shared/StarRating/starrating.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// Exports\nmodule.exports = {\n\t\"rating\": \"starrating__rating--3_Miu\",\n\t\"rating__body\": \"starrating__rating__body--1nflk\",\n\t\"rating__active\": \"starrating__rating__active--30vxW\",\n\t\"rating__items\": \"starrating__rating__items--20y-u\",\n\t\"rating__item\": \"starrating__rating__item--355mB\",\n\t\"rating__value\": \"starrating__rating__value--2bD_j\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/StarRating/starrating.css?");
 
 /***/ }),
 
@@ -859,6 +929,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 
 "use strict";
 eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CinemaActionTypes = void 0;\r\nvar CinemaActionTypes;\r\n(function (CinemaActionTypes) {\r\n    CinemaActionTypes[\"PAGINATION\"] = \"PAGINATION\";\r\n    CinemaActionTypes[\"FETCH_MOVIES_ERROR\"] = \"FETCH_MOVIES_ERROR\";\r\n    CinemaActionTypes[\"FETCH_MOVIES\"] = \"FETCH_MOVIES\";\r\n    CinemaActionTypes[\"INIT_CINEMA\"] = \"INIT_CINEMA\";\r\n    CinemaActionTypes[\"SEARCH_CINEMA\"] = \"SEARCH_CINEMA\";\r\n})(CinemaActionTypes = exports.CinemaActionTypes || (exports.CinemaActionTypes = {}));\r\n\n\n//# sourceURL=webpack:///./src/store/types/cinema.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/js/getTime.ts":
+/*!*********************************!*\
+  !*** ./src/utils/js/getTime.ts ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.getTime = void 0;\r\nvar getTime = function (time) {\r\n    var hours = Math.floor(time / 60);\r\n    var minute = time % 60;\r\n    return hours + \"h \" + minute + \"m\";\r\n};\r\nexports.getTime = getTime;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/getTime.ts?");
 
 /***/ }),
 
