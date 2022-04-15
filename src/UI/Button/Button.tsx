@@ -3,7 +3,7 @@ import styles from "./button.css"
 
 interface IButtonProps {
     children: string
-    onClick?: () => void
+    onClick?: (e: React.SyntheticEvent) => void
 }
 
 export function Button({ children, onClick }: IButtonProps) {

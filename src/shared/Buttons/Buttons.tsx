@@ -10,13 +10,17 @@ interface IButtonsProps {
 export function Buttons({ identifire }: IButtonsProps) {
     const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
-    const removeHandler = (): void => {
+    const removeHandler = (e: React.SyntheticEvent) => {
+        e.stopPropagation()
         setOpenDeleteModal(true)
+    }
+    const editHandler = (e: React.SyntheticEvent) => {
+        e.stopPropagation()
     }
     return (
         <div className={styles.buttons}>
-            <Button>Edit</Button>
-            <Button onClick={() => removeHandler()}>Remove</Button>
+            <Button onClick={editHandler}>Edit</Button>
+            <Button onClick={removeHandler}>Remove</Button>
             <DeleteModal
                 onOpen={openDeleteModal}
                 setClose={setOpenDeleteModal}
