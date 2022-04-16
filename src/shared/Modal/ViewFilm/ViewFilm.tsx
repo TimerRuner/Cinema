@@ -13,12 +13,6 @@ export function ViewFilm() {
     const film = movies.find((movie) => movie.imdbID === id)
     if (!id) return null
 
-    /*
-      Genre, // Drama
-      Runtime, // 138 min
-      Year
-    */
-
     const additionalInfo = [
         film?.Year,
         film?.Genre,
@@ -31,7 +25,7 @@ export function ViewFilm() {
                 <div className={styles.about__img}>
                     <img src={film?.Poster} alt="poster" />
                 </div>
-                <Buttons identifire={id} />
+                <Buttons identifire={id} isOtherModal={true} />
             </div>
             <div className={styles.about__content}>
                 <h2 className={styles.about__title}>{film?.Title}</h2>

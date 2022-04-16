@@ -36,7 +36,7 @@ export function Input({
     errorMessage,
 }: IInputProps) {
     const inputType = type || "text"
-    const cls = ["input"]
+    const cls = [`input ${type}`]
     const htmlFor = `${inputType}-${Math.random()}`
 
     if (isInvalid({ valid, touched, shouldValidate })) {

@@ -2,13 +2,16 @@ import React, { useState } from "react"
 import styles from "./buttons.css"
 import { Button } from "../../UI/Button"
 import { DeleteModal } from "../DeleteModal/DeleteModal"
+import { useNavigate } from "react-router-dom"
 
 interface IButtonsProps {
     identifire: string
+    isOtherModal?: boolean
 }
 
-export function Buttons({ identifire }: IButtonsProps) {
+export function Buttons({ identifire, isOtherModal }: IButtonsProps) {
     const [openDeleteModal, setOpenDeleteModal] = useState(false)
+    const openEditModal = useNavigate()
 
     const removeHandler = (e: React.SyntheticEvent) => {
         e.stopPropagation()
@@ -16,6 +19,11 @@ export function Buttons({ identifire }: IButtonsProps) {
     }
     const editHandler = (e: React.SyntheticEvent) => {
         e.stopPropagation()
+        if (isOtherModal) {
+            openEditModal(`/show/edit/${identifire}`)
+        } else {
+            openEditModal(`/edit/${identifire}`)
+        }
     }
     return (
         <div className={styles.buttons}>

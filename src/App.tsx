@@ -11,6 +11,7 @@ import { useIsMounted } from "./hooks/isMounted"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Modal } from "./shared/Modal"
 import { ViewFilm } from "./shared/Modal/ViewFilm"
+import { FilmInfo } from "./shared/Modal/FilmInfo"
 
 export function AppCopmonent() {
     const [isMounted] = useIsMounted()
@@ -36,8 +37,47 @@ export function AppCopmonent() {
                                     <Header />
                                     <CardList />
                                     <Alert />
-                                    <Modal name="View Modal">
+                                    <Modal name="Show Info">
                                         <ViewFilm />
+                                    </Modal>
+                                </Layout>
+                            }
+                        />
+                        <Route
+                            path="/edit/:id"
+                            element={
+                                <Layout>
+                                    <Header />
+                                    <CardList />
+                                    <Alert />
+                                    <Modal name="Edit Info">
+                                        <FilmInfo />
+                                    </Modal>
+                                </Layout>
+                            }
+                        />
+                        <Route
+                            path="/show/edit/:id"
+                            element={
+                                <Layout>
+                                    <Header />
+                                    <CardList />
+                                    <Alert />
+                                    <Modal isOtherModal={true} name="Edit Info">
+                                        <FilmInfo />
+                                    </Modal>
+                                </Layout>
+                            }
+                        />
+                        <Route
+                            path="/add-film"
+                            element={
+                                <Layout>
+                                    <Header />
+                                    <CardList />
+                                    <Alert />
+                                    <Modal name="Add New Film">
+                                        <FilmInfo />
                                     </Modal>
                                 </Layout>
                             }

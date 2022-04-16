@@ -8,8 +8,10 @@ interface IadditionalInfoProps {
 export function AdditionalInfo({ info }: IadditionalInfoProps) {
     return (
         <div className={styles.additional}>
-            {info.map((item) => (
-                <div className={styles.additional_info}>{item}</div>
+            {info.map((item, index) => (
+                <div className={styles.additional_info} key={index}>
+                    {item}
+                </div>
             ))}
         </div>
     )
