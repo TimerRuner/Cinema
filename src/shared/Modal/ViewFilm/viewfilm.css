@@ -1,11 +1,6 @@
 .about {
     display: flex;
     align-items: flex-start;
-    overflow-y: auto;
-    width: 1140px;
-    max-width: 80vw;
-    height: auto;
-    max-height: 60vh;
 }
 .about__view {
     width: 300px;
