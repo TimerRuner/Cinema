@@ -64,7 +64,7 @@ export function AppCopmonent() {
                                     <CardList />
                                     <Alert />
                                     <Modal isOtherModal={true} name="Edit Info">
-                                        <FilmInfo />
+                                        <FilmInfo isOtherModal={true} />
                                     </Modal>
                                 </Layout>
                             }

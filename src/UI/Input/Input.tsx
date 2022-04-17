@@ -13,7 +13,9 @@ interface IInputProps {
     shouldValidate: boolean
     label: string
     value: string
+    size?: string
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChangeTextarea?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
     errorMessage: string
 }
 
@@ -33,6 +35,8 @@ export function Input({
     label,
     value,
     onChange,
+    onChangeTextarea,
+    size,
     errorMessage,
 }: IInputProps) {
     const inputType = type || "text"
@@ -44,14 +48,23 @@ export function Input({
     }
 
     return (
-        <div className={cls.join(" ")}>
+        <div className={cls.join(" ")} data-size={size}>
             <label htmlFor={htmlFor}>{label}</label>
-            <input
-                type={inputType}
-                id={htmlFor}
-                value={value}
-                onChange={onChange}
-            />
+            {inputType === "textarea" ? (
+                <textarea
+                    id={htmlFor}
+                    value={value}
+                    onChange={onChangeTextarea}
+                ></textarea>
+            ) : (
+                <input
+                    type={inputType}
+                    id={htmlFor}
+                    value={value}
+                    onChange={onChange}
+                />
+            )}
+
             {isInvalid({ valid, touched, shouldValidate }) ? (
                 <span>{errorMessage}</span>
             ) : null}

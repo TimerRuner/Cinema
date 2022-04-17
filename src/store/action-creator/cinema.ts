@@ -59,3 +59,8 @@ export const addNewIdAndMovies = (data: { id: string[]; movies: any[] }) => ({
     type: CinemaActionTypes.INIT_CINEMA,
     payload: data,
 })
+
+export const editFilm = (film: any[]) => ({
+    type: CinemaActionTypes.EDIT_FILM,
+    payload: film,
+})

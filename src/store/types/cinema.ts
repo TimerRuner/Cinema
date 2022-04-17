@@ -19,6 +19,7 @@ export enum CinemaActionTypes {
     FETCH_MOVIES = "FETCH_MOVIES",
     INIT_CINEMA = "INIT_CINEMA",
     SEARCH_CINEMA = "SEARCH_CINEMA",
+    EDIT_FILM = "EDIT_FILM",
 }
 
 interface FetchCinemaAction {
@@ -43,9 +44,15 @@ interface InitCinema {
     payload: InitCinemaType
 }
 
+interface EditFilm {
+    type: CinemaActionTypes.EDIT_FILM
+    payload: any[]
+}
+
 export type CinemaAction =
     | FetchCinemaSuccessAction
     | FetchCinemaErrorAction
     | FetchCinemaAction
     | InitCinema
     | SearchCinema
+    | EditFilm

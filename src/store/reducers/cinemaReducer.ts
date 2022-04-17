@@ -26,6 +26,8 @@ export const cinemaReducer = (
             return { ...state, error: action.payload, loading: false }
         case CinemaActionTypes.SEARCH_CINEMA:
             return { ...state, sortedMovies: action.payload }
+        case CinemaActionTypes.EDIT_FILM:
+            return { ...state, movies: action.payload }
         default:
             return state
     }

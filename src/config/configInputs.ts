@@ -5,24 +5,12 @@ export interface IFormConfig {
 }
 export interface IInputConfig {
     value: string
-    Title?: string
-    Poster?: string
-    Plot?: string
-    Runtime?: string
-    Genre?: string
-    Production?: string
-    Country?: string
-    Director?: string
-    Writer?: string
-    Actors?: string
-    Awards?: string
-    Metascore?: string
-    Year?: string
     type: string
     label: string
     errorMessage: string
     valid: boolean
     touched: boolean
+    size?: string
     validation: IValidation
 }
 export interface IValidation {
@@ -38,9 +26,8 @@ export const getInputConfig = (
         return {
             isFormValid: defaultValid ? defaultValid : false,
             formControls: {
-                title: {
+                Title: {
                     value: film?.Title,
-                    Title: film?.Title,
                     type: "text",
                     label: "Title",
                     errorMessage: "Enter title of film !",
@@ -51,9 +38,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                poster: {
+                Poster: {
                     value: film?.Poster,
-                    Poster: film?.Poster,
                     type: "text",
                     label: "Poster",
                     errorMessage: "Enter poster link!",
@@ -64,9 +50,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                plot: {
+                Plot: {
                     value: film?.Plot,
-                    Plot: film?.Plot,
                     type: "textarea",
                     label: "Plot",
                     errorMessage: "Enter short plot!",
@@ -77,61 +62,60 @@ export const getInputConfig = (
                         minLength: 10,
                     },
                 },
-                rating: {
+                Metascore: {
                     value: film?.Metascore,
-                    Metascore: film?.Metascore,
                     type: "text",
                     label: "Rating",
                     errorMessage: "Enter rating from 1 to 100!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                year: {
+                Year: {
                     value: film?.Year,
-                    Year: film?.Year,
                     type: "text",
                     label: "Year",
                     errorMessage: "Enter year!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                runtime: {
+                Runtime: {
                     value: film?.Runtime,
-                    Runtime: film?.Runtime,
                     type: "text",
                     label: "Runtime",
                     errorMessage: "Enter minutes!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                genre: {
+                Genre: {
                     value: film?.Genre,
-                    Genre: film?.Genre,
                     type: "text",
                     label: "Genre",
                     errorMessage: "Enter genre!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         minLength: 3,
                     },
                 },
-                production: {
+                Production: {
                     value: film?.Production,
-                    Production: film?.Production,
                     type: "text",
                     label: "Production",
                     errorMessage: "Enter production!",
@@ -142,9 +126,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                country: {
+                Country: {
                     value: film?.Country,
-                    Country: film?.Country,
                     type: "text",
                     label: "Country",
                     errorMessage: "Enter country!",
@@ -155,9 +138,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                director: {
+                Director: {
                     value: film?.Director,
-                    Director: film?.Director,
                     type: "text",
                     label: "Director",
                     errorMessage: "Enter director!",
@@ -168,9 +150,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                writer: {
+                Writer: {
                     value: film?.Writer,
-                    Writer: film?.Writer,
                     type: "text",
                     label: "Writer",
                     errorMessage: "Enter writer!",
@@ -181,9 +162,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                actors: {
+                Actors: {
                     value: film?.Actors,
-                    Actors: film?.Actors,
                     type: "text",
                     label: "Actors",
                     errorMessage: "Enter actors!",
@@ -194,9 +174,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                awards: {
+                Awards: {
                     value: film?.Awards,
-                    Awards: film?.Awards,
                     type: "text",
                     label: "Awards",
                     errorMessage: "Enter awards!",
@@ -213,9 +192,8 @@ export const getInputConfig = (
         return {
             isFormValid: false,
             formControls: {
-                title: {
+                Title: {
                     value: "",
-                    Title: "",
                     type: "text",
                     label: "Title",
                     errorMessage: "Enter title of film !",
@@ -226,9 +204,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                poster: {
+                Poster: {
                     value: "",
-                    Poster: "",
                     type: "text",
                     label: "Poster",
                     errorMessage: "Enter poster link!",
@@ -239,9 +216,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                plot: {
+                Plot: {
                     value: "",
-                    Plot: "",
                     type: "textarea",
                     label: "Plot",
                     errorMessage: "Enter short plot!",
@@ -252,61 +228,60 @@ export const getInputConfig = (
                         minLength: 10,
                     },
                 },
-                rating: {
+                Metascore: {
                     value: "",
-                    Metascore: "",
                     type: "text",
                     label: "Rating",
                     errorMessage: "Enter rating from 1 to 100!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                year: {
+                Year: {
                     value: "",
-                    Year: "",
                     type: "text",
                     label: "Year",
                     errorMessage: "Enter year!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                runtime: {
+                Runtime: {
                     value: "",
-                    Runtime: "",
                     type: "text",
                     label: "Runtime",
                     errorMessage: "Enter minutes!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         number: true,
                     },
                 },
-                genre: {
+                Genre: {
                     value: "",
-                    Genre: "",
                     type: "text",
                     label: "Genre",
                     errorMessage: "Enter genre!",
                     valid: false,
                     touched: false,
+                    size: "small",
                     validation: {
                         required: true,
                         minLength: 3,
                     },
                 },
-                production: {
+                Production: {
                     value: "",
-                    Production: "",
                     type: "text",
                     label: "Production",
                     errorMessage: "Enter production!",
@@ -317,9 +292,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                country: {
+                Country: {
                     value: "",
-                    Country: "",
                     type: "text",
                     label: "Country",
                     errorMessage: "Enter country!",
@@ -330,9 +304,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                director: {
+                Director: {
                     value: "",
-                    Director: "",
                     type: "text",
                     label: "Director",
                     errorMessage: "Enter director!",
@@ -343,9 +316,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                writer: {
+                Writer: {
                     value: "",
-                    Writer: "",
                     type: "text",
                     label: "Writer",
                     errorMessage: "Enter writer!",
@@ -356,9 +328,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                actors: {
+                Actors: {
                     value: "",
-                    Actors: "",
                     type: "text",
                     label: "Actors",
                     errorMessage: "Enter actor!",
@@ -369,9 +340,8 @@ export const getInputConfig = (
                         minLength: 3,
                     },
                 },
-                awards: {
+                Awards: {
                     value: "",
-                    Awards: "",
                     type: "text",
                     label: "Awards",
                     errorMessage: "Enter awards!",

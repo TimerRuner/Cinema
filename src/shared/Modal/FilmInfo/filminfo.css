@@ -49,6 +49,7 @@
     background-color: transparent;
     transition: background-color 0.2s ease;
 }
+
 .form_button:last-of-type:hover {
     background-color: var(--green);
 }
@@ -58,4 +59,8 @@
 }
 .form_button:first-of-type {
     margin: 0 10px 0 0;
+}
+.form_button:disabled,
+.form_button:disabled:hover {
+    background-color: rgba(158, 158, 158, 0.608);
 }
