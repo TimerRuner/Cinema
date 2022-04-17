@@ -14,3 +14,7 @@ export const show = (text: string, type: string = "warning") => {
         }, 5000)
     }
 }
+
+export const hide = () => ({
+    type: AlertAction.HIDE_ALERT,
+})

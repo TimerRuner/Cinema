@@ -2,13 +2,13 @@ import React from "react"
 import styles from "./input.css"
 
 interface invalidProps {
-    valid: boolean
+    valid: boolean | null
     touched: boolean
     shouldValidate: boolean
 }
 interface IInputProps {
     type: string
-    valid: boolean
+    valid: boolean | null
     touched: boolean
     shouldValidate: boolean
     label: string
@@ -23,7 +23,7 @@ const isInvalid = ({
     valid,
     touched,
     shouldValidate,
-}: invalidProps): boolean => {
+}: invalidProps): boolean | null => {
     return !valid && shouldValidate && touched
 }
 
