@@ -11,96 +11,99 @@ import { FilmInfo } from "../../Modal/FilmInfo"
 import { ViewFilm } from "../../Modal/ViewFilm"
 
 export const pages = [
-    <Route
-        path="/"
-        element={
+    {
+        path: "/",
+        element: (
             <Layout>
                 <Header />
                 <CardList />
-                <Alert />
             </Layout>
-        }
-    />,
-    <Route
-        path="/show/:id"
-        element={
+        ),
+    },
+    {
+        path: "*",
+        element: (
             <Layout>
                 <Header />
                 <CardList />
-                <Alert />
+            </Layout>
+        ),
+    },
+    {
+        path: "/show/:id",
+        element: (
+            <Layout>
+                <Header />
+                <CardList />
                 <Modal name="Show Info">
                     <ViewFilm />
                 </Modal>
             </Layout>
-        }
-    />,
-    <Route
-        path="/edit/:id"
-        element={
+        ),
+    },
+    {
+        path: "/edit/:id",
+        element: (
             <Layout>
                 <Header />
                 <CardList />
-                <Alert />
                 <Modal name="Edit Info">
                     <FilmInfo />
                 </Modal>
             </Layout>
-        }
-    />,
-    <Route
-        path="/show/edit/:id"
-        element={
+        ),
+    },
+    {
+        path: "/show/edit/:id",
+        element: (
             <Layout>
                 <Header />
                 <CardList />
-                <Alert />
                 <Modal isOtherModal={true} name="Edit Info">
                     <FilmInfo isOtherModal={true} />
                 </Modal>
             </Layout>
-        }
-    />,
-    <Route
-        path="/add-film"
-        element={
+        ),
+    },
+    {
+        path: "/add-film",
+        element: (
             <Layout>
                 <Header />
                 <CardList />
-                <Alert />
                 <Modal name="Add New Film">
                     <FilmInfo />
                 </Modal>
             </Layout>
-        }
-    />,
+        ),
+    },
 ]
 
 export const auth = [
-    <Route
-        path="/"
-        element={
+    {
+        path: "/",
+        element: (
             <Auth>
                 <AuthForm isLogin={true} />
-                <Alert timeout={true} />
             </Auth>
-        }
-    />,
-    <Route
-        path="/register"
-        element={
+        ),
+    },
+    {
+        path: "/register",
+        element: (
             <Auth>
                 <AuthForm isLogin={false} />
-                <Alert timeout={true} />
             </Auth>
-        }
-    />,
-    <Route
-        path="*"
-        element={
+        ),
+    },
+    {
+        path: "*",
+        element: (
             <Auth>
-                <AuthForm isLogin={true} />
-                <Alert timeout={true} />
+                <Auth>
+                    <AuthForm isLogin={true} />
+                </Auth>
             </Auth>
-        }
-    />,
+        ),
+    },
 ]

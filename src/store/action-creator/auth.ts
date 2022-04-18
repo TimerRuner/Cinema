@@ -11,6 +11,7 @@ import { AlertAction, AlertActionTypes } from "../types/alert"
 export const auth = (email: string, password: string, isLogin: boolean) => {
     return async (dispath: Dispatch<AuthInterfaceTypes | AlertActionTypes>) => {
         try {
+            dispath({ type: AuthConstActions.LOADING, payload: true })
             const authData = {
                 email,
                 password,
@@ -36,11 +37,20 @@ export const auth = (email: string, password: string, isLogin: boolean) => {
             dispath(authSuccess(data.idToken))
 
             autoLogout(String(data.expiresIn))
+            dispath({ type: AuthConstActions.LOADING, payload: false })
+            dispath({
+                type: AlertAction.SHOW_ALERT,
+                payload: {
+                    text: isLogin ? "Login Success" : "Registration Success",
+                    type: "success",
+                },
+            })
         } catch (error) {
             dispath({
                 type: AlertAction.SHOW_ALERT,
                 payload: { text: String(error), type: "error" },
             })
+            dispath({ type: AuthConstActions.LOADING, payload: false })
         }
     }
 }

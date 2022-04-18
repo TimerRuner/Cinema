@@ -4,16 +4,12 @@ import { useTypeSelector } from "../../hooks/useTypeSelector"
 import { CSSTransition } from "react-transition-group"
 import { useActions } from "../../hooks/useAction"
 
-interface IAlertProps {
-    timeout?: boolean
-}
-
-export function Alert({ timeout }: IAlertProps) {
+export function Alert() {
     const { text, type, visible } = useTypeSelector((state) => state.alert)
     const { hide } = useActions()
     let time: NodeJS.Timeout | null = null
 
-    if (timeout && visible) {
+    if (visible) {
         if (time) {
             clearTimeout(time)
         }
