@@ -13,7 +13,7 @@ export function Alert({ timeout }: IAlertProps) {
     const { hide } = useActions()
     let time: NodeJS.Timeout | null = null
 
-    if (timeout) {
+    if (timeout && visible) {
         if (time) {
             clearTimeout(time)
         }

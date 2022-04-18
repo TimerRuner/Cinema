@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 export function Header() {
     const showAddModal = useNavigate()
+    const { logout } = useActions()
     const clickHandler = () => {
         showAddModal("/add-film")
     }
@@ -19,7 +20,12 @@ export function Header() {
                         Movie DB
                     </a>
                     <SearchInput />
-                    <Button onClick={() => clickHandler()}>Add Movie</Button>
+                    <div className={styles.header__buttons}>
+                        <Button onClick={() => clickHandler()}>
+                            Add Movie
+                        </Button>
+                        <Button onClick={() => logout()}>Log out</Button>
+                    </div>
                 </div>
             </div>
         </header>

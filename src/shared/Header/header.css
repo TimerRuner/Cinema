@@ -23,3 +23,9 @@
 .header button {
     height: 40px;
 }
+.header__buttons {
+    display: flex;
+}
+.header__buttons button:first-of-type {
+    margin: 0 10px 0 0;
+}
