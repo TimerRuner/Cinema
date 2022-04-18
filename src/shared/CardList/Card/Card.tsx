@@ -35,7 +35,7 @@ export function Card({ title, src, id, year }: ICardProps) {
             <div className={styles.card__content}>
                 <img src={src} className={styles.card__bg} />
                 <div className={styles.card__wrapper}>
-                    <div className={styles.card__content}>
+                    <div className={styles.card__wrapper_content}>
                         <h2 className={styles.card__title}>
                             <Text size={20} color={EColors.white}>
                                 {title}

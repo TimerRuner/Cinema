@@ -6,31 +6,28 @@ import ids from "../../db/ids"
 
 type fetching = (page: number, limit: number, movies: any[]) => void
 
-export const initData = async () => {
-    if (!localStorage.getItem("ids")) {
-        localStorage.setItem("ids", JSON.stringify(ids))
-    }
-    if (!localStorage.getItem("films")) {
-        const films = await Promise.all(ids.map((id) => axios.get(`/?i=${id}`)))
-        localStorage.setItem("films", JSON.stringify(films))
-    }
-    const idsFilms = JSON.parse(localStorage.getItem("ids") || "[]")
-    const allMovies = JSON.parse(localStorage.getItem("films") || "[]")
-
-    return {
-        id: idsFilms,
-        movies: allMovies,
-    }
-}
-
 export const initCinema = () => {
     return async (dispatch: Dispatch<CinemaAction>) => {
         try {
             dispatch({ type: CinemaActionTypes.FETCH_MOVIES })
-            const data = await initData()
+            if (!localStorage.getItem("ids")) {
+                localStorage.setItem("ids", JSON.stringify(ids))
+            }
+            if (!localStorage.getItem("films")) {
+                const films = await Promise.all(
+                    ids.map((id) => axios.get(`/?i=${id}`))
+                )
+                localStorage.setItem("films", JSON.stringify(films))
+            }
+            const idsFilms = JSON.parse(localStorage.getItem("ids") || "[]")
+            const allMovies = JSON.parse(localStorage.getItem("films") || "[]")
+
             dispatch({
                 type: CinemaActionTypes.INIT_CINEMA,
-                payload: data,
+                payload: {
+                    id: idsFilms,
+                    movies: allMovies,
+                },
             })
         } catch (error) {
             dispatch({

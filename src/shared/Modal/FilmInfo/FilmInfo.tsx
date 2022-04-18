@@ -17,7 +17,7 @@ export function FilmInfo({ isOtherModal }: IFilmInfoProps) {
     const { id } = useParams()
     const { movies } = useTypeSelector((state) => state.cinema)
     const closeInfoModal = useNavigate()
-    const { editFilm } = useActions()
+    const { editFilm, show } = useActions()
 
     let configInput = null
 
@@ -159,11 +159,13 @@ export function FilmInfo({ isOtherModal }: IFilmInfoProps) {
 
             const newMovies = movies.map((movie) => {
                 if (movie.imdbID === id) {
+                    show(`Edited film: ${movie.Title}`, "success")
                     for (let prop in movie) {
                         if (editedFilm[prop]) {
                             movie[prop] = editedFilm[prop].value
                         }
                     }
+
                     return movie
                 } else {
                     return movie
@@ -185,8 +187,9 @@ export function FilmInfo({ isOtherModal }: IFilmInfoProps) {
             movies.push(newFilm)
             localStorage.setItem("films", JSON.stringify(movies))
             editFilm(movies)
-
             closeInfoModal("/")
+            /* Додати сповіщення про створення нового фільму */
+            show(`Added new film: ${newFilm.Title}`, "success")
         }
     }
 

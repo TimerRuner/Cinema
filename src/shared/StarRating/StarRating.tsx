@@ -1,14 +1,6 @@
 import React from "react"
 import styles from "./starrating.css"
 
-{
-    /* <div className={`${styles.rating} ${styles.rating_set}`}>
-<div className={styles.rating__body}>
-    <div className={styles.rating__active}></div>
-</div>
-</div> */
-}
-
 interface IStarRatingProps {
     rating: number
 }
