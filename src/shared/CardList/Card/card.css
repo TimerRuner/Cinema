@@ -3,10 +3,32 @@
     margin: 0 0 20px 0;
     width: 25%;
 }
+@media all and (max-width: 992px) {
+    .card {
+        width: 33.333%;
+    }
+}
+@media all and (max-width: 698px) {
+    .card {
+        width: 50%;
+    }
+}
+@media all and (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+}
 .card:hover .card__wrapper {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+}
+@media all and (max-width: 698px) {
+    .card .card__wrapper {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
 }
 .card__content {
     position: relative;

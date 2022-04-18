@@ -56,4 +56,24 @@
     font-size: 50%;
     line-height: 1;
     padding: 0 0 0 10px;
+    white-space: nowrap;
+}
+@media all and (max-width: 1054px) {
+    .rating {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .rating__value {
+        margin: 0 0 10px 0;
+    }
+}
+@media all and (max-width: 992px) {
+    .rating {
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+    .rating__value {
+        font-size: 18px;
+        padding: 0;
+    }
 }

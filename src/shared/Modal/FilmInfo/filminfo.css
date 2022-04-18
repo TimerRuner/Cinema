@@ -64,3 +64,24 @@
 .form_button:disabled:hover {
     background-color: rgba(158, 158, 158, 0.608);
 }
+
+@media all and (max-width: 768px) {
+    .filmPoster {
+        flex: 0 0 250px;
+        width: 250px;
+    }
+}
+@media all and (max-width: 687px) {
+    .filmInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filmPoster {
+        margin: 0 0 20px 0;
+    }
+}
+@media all and (max-width: 400px) {
+    .filmPoster {
+        width: 100%;
+    }
+}

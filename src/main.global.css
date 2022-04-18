@@ -40,6 +40,7 @@ section {
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 body {
     line-height: 1;
@@ -226,4 +227,18 @@ body {
 .input.invalid span {
     opacity: 1;
     transform: translateY(110%);
+}
+
+@media all and (max-width: 992px) {
+    .input {
+        width: 100%;
+    }
+    .input[data-size="small"] {
+        width: calc(50% - 10px);
+    }
+}
+@media all and (max-width: 768px) {
+    .input[data-size="small"] {
+        width: 100%;
+    }
 }

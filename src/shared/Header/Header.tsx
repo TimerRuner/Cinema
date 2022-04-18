@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./header.css"
 import { Button } from "../../UI/Button"
 import { SearchInput } from "../SearchInput"
@@ -7,9 +7,19 @@ import { useNavigate } from "react-router-dom"
 
 export function Header() {
     const showAddModal = useNavigate()
+    const [dropOpen, setDropOpen] = useState(false)
     const { logout } = useActions()
     const clickHandler = () => {
         showAddModal("/add-film")
+        setDropOpen(false)
+    }
+
+    const toggleDropHandler = () => {
+        setDropOpen(!dropOpen)
+    }
+    const logoutHandler = () => {
+        logout()
+        setDropOpen(false)
     }
 
     return (
@@ -20,11 +30,25 @@ export function Header() {
                         Movie DB
                     </a>
                     <SearchInput />
-                    <div className={styles.header__buttons}>
+                    <div
+                        className={`${styles.header__buttons} ${
+                            dropOpen ? styles._activeDrop : ""
+                        }`}
+                    >
                         <Button onClick={() => clickHandler()}>
                             Add Movie
                         </Button>
-                        <Button onClick={() => logout()}>Log out</Button>
+                        <Button onClick={logoutHandler}>Log out</Button>
+                    </div>
+                    <div
+                        className={`${styles.header__burger} ${
+                            dropOpen ? styles.active : ""
+                        }`}
+                        onClick={() => toggleDropHandler()}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>

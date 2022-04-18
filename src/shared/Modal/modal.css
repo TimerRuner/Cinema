@@ -45,3 +45,8 @@
     height: auto;
     max-height: 60vh;
 }
+@media all and (max-width: 568px) {
+    .modal__content {
+        max-width: 90vw;
+    }
+}

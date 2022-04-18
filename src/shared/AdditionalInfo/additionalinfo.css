@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
 }
 .additional_info {
     padding: 3px 5px;
@@ -12,5 +12,5 @@
     font-size: 14px;
     line-height: 16px;
     border-radius: 5px;
-    margin: 0 5px 0 0;
+    margin: 0 5px 5px 0;
 }
