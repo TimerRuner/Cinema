@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 export function Header() {
     const showAddModal = useNavigate()
     const [dropOpen, setDropOpen] = useState(false)
-    const { logout } = useActions()
+    const { logout, initCinema } = useActions()
     const clickHandler = () => {
         showAddModal("/add-film")
         setDropOpen(false)
@@ -20,6 +20,11 @@ export function Header() {
     const logoutHandler = () => {
         logout()
         setDropOpen(false)
+    }
+    const resetHandler = () => {
+        localStorage.setItem("films", "")
+        localStorage.setItem("ids", "")
+        initCinema()
     }
 
     return (
@@ -39,6 +44,7 @@ export function Header() {
                             Add Movie
                         </Button>
                         <Button onClick={logoutHandler}>Log out</Button>
+                        <Button onClick={resetHandler}>Reload Films</Button>
                     </div>
                     <div
                         className={`${styles.header__burger} ${

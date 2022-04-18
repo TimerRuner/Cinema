@@ -33,7 +33,7 @@ export function CardList() {
                 <div className={styles.cardList__content}>
                     <h2 className={styles.cardList__title}>IMDB Top 250</h2>
                     {loading && <Loader />}
-                    {!currentMovies.length && (
+                    {!loading && !currentMovies.length && (
                         <div className={styles.cardList__empty}>No posts</div>
                     )}
                     <TransitionGroup
