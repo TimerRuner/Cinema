@@ -77,3 +77,9 @@
         padding: 0;
     }
 }
+@media all and (max-width: 568px) {
+    .rating {
+        font-size: 18px;
+        margin: 0 0 10px 0;
+    }
+}

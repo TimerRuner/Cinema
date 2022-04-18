@@ -681,7 +681,7 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Exports\nmodule.exports = {\n\t\"header\": \"header__header--bAgyG\",\n\t\"header__wrapper\": \"header__header__wrapper--2RySQ\",\n\t\"header__logo\": \"header__header__logo--TLrNf\",\n\t\"header__buttons\": \"header__header__buttons--3ISfJ\",\n\t\"header__burger\": \"header__header__burger--3Gsb7\",\n\t\"_activeDrop\": \"header___activeDrop--62wFH\",\n\t\"active\": \"header__active--1viAV\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Header/header.css?");
+eval("// Exports\nmodule.exports = {\n\t\"header\": \"header__header--bAgyG\",\n\t\"header__wrapper\": \"header__header__wrapper--2RySQ\",\n\t\"header__logo\": \"header__header__logo--TLrNf\",\n\t\"header__buttons\": \"header__header__buttons--3ISfJ\",\n\t\"header__burger\": \"header__header__burger--3Gsb7\",\n\t\"header__button\": \"header__header__button--1mZm3\",\n\t\"_activeDrop\": \"header___activeDrop--62wFH\",\n\t\"active\": \"header__active--1viAV\"\n};\n\n\n//# sourceURL=webpack:///./src/shared/Header/header.css?");
 
 /***/ }),
 

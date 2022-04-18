@@ -26,8 +26,8 @@
 .header__buttons {
     display: flex;
 }
-.header__buttons button:not(:last-of-type) {
-    margin: 0 10px 0 0;
+.header__buttons button {
+    margin: 0 10px 10px 0;
 }
 
 @media all and (min-width: 769px) {
@@ -80,6 +80,9 @@
         );
         justify-content: flex-end;
         border-radius: 0 0 10px 10px;
+        flex-wrap: wrap;
+    }
+    .header__button {
     }
     ._activeDrop {
         right: 0;
@@ -106,5 +109,11 @@
         font-size: 16px;
         line-height: 18px;
         text-align: center;
+    }
+    .header__buttons {
+        right: -200%;
+    }
+    ._activeDrop {
+        right: 0;
     }
 }
