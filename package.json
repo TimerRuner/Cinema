@@ -16,15 +16,16 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@types/react-dom": "^18.0.0",
         "@hot-loader/react-dom": "^17.0.1",
         "@types/react": "^17.0.43",
+        "@types/react-dom": "^18.0.0",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-transition-group": "^4.4.4",
         "axios": "^0.26.1",
         "classnames": "^2.3.1",
         "clean-webpack-plugin": "^4.0.0-alpha.0",
         "compression": "^1.7.4",
+        "copy-webpack-plugin": "^4.5.4",
         "css-loader": "^3.4.2",
         "css-modules-typescript-loader": "^4.0.1",
         "express": "^4.17.1",
@@ -54,5 +55,4 @@
         "webpack-hot-middleware": "^2.25.0",
         "webpack-node-externals": "^3.0.0"
     }
-
 }

@@ -38,7 +38,10 @@ export function Modal({ children, name, isOtherModal }: IModalProps) {
                 <div className={styles.modal__header}>
                     <span className={styles.modal__name}>{name}</span>
                     <span className={styles.modal__close} ref={close}>
-                        &#128473;
+                        <img
+                            src="/static/img/icons/close.svg"
+                            alt="close-icon"
+                        />
                     </span>
                 </div>
                 <div className={styles.modal__content}>{children}</div>
